@@ -1,4 +1,4 @@
-# Capistrano::SecretsYml
+# Capistrano::SecretsGenerate
 
 Capistrano tasks for handling generating a `secret.token` when deploying Rails 4+ apps.
 
