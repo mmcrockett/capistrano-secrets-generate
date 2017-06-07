@@ -14,7 +14,7 @@ namespace :secrets_generate do
       secret_token_current_exists = test("[ -f #{secret_token_current_path} ]")
 
       if ((false == secret_token_current_exists) && (false == secret_token_linked_exists))
-        after("deploy:published", "secrets_generate:generate_secret")
+        after("deploy:assets:precompile", "secrets_generate:generate_secret")
       else
         if (true == secret_token_current_exists)
           if (false == test("[ -d #{secret_token_linked_dir} ]"))
